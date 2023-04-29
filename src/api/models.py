@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+import bcrypt
+
 
 db = SQLAlchemy()
 
@@ -11,8 +13,10 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.email}>'
 
-    def password_control(self):
-        return self.password
+    def password_control(self, password):
+       #check password
+        check_password = bcrypt.checkpw(password, self.password)
+        return  check_password
 
     def serialize(self):
         return {
