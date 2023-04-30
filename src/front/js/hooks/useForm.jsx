@@ -8,10 +8,6 @@ const useForm = (inicializate = {}) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // useEffect(() => {
-  //   console.log(form);
-  // }, [form]);
-
   return { form, handleForm };
 };
 

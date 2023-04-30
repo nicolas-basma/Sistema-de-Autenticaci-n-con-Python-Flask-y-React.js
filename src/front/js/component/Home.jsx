@@ -5,18 +5,18 @@ const Home = () => {
   const { store, action } = useStore();
   const { listUser } = store;
   const { getUser } = action;
-  // useEffect(() => {
-  // }, []);
-  console.log(listUser.map((user) => console.log(user)));
+
   useMemo(() => {
     getUser();
   }, []);
   return (
-    <h1>
-      {listUser
-        ? listUser.map((user) => <p key={user.id}>{user.email}</p>)
-        : null}
-    </h1>
+    <>
+      <h1>
+        {listUser
+          ? listUser.map((user) => <p key={user.id}>{user.email}</p>)
+          : null}
+      </h1>
+    </>
   );
 };
 

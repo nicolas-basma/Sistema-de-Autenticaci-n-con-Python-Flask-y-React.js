@@ -5,3 +5,13 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+@import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap");
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2022/09/28/02/48/matrix-7484072_1280.jpg");
+  background-size: contain;
+  font-family: "Darumadrop One", cursive;
+  font-size: 50px;
+  min-height: 100vh;
+  color: aliceblue;
+}

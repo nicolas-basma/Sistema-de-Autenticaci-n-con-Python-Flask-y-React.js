@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap");
 
+.container {
+  margin: 10px;
+  display: flex;
+}
 a {
   font-family: "Darumadrop One", cursive;
   font-size: 50px;
@@ -13,4 +17,8 @@ button {
   padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
+}
+img {
+  border-radius: 50%;
+  margin: 10px;
 }

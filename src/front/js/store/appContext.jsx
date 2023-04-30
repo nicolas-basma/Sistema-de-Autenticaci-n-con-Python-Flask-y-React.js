@@ -70,7 +70,7 @@ export const ContextProvider = ({ children }) => {
         return res.json();
       })
       .then((data) => setUser(data))
-      .catch((err) => handleError("/login"));
+      .catch((err) => handleError("/"));
   };
   //this will be passed as the contenxt value
   const store = { listUser, user };
@@ -79,11 +79,8 @@ export const ContextProvider = ({ children }) => {
     handleLogin,
     getUser,
     handlePrivateInfo,
+    setUser,
   };
-
-  // useEffect(() => {
-  //   getUser();
-  // }, [getUser]);
 
   // The initial value for the context is not null anymore, but the current state of this component,
   // the context will now have a getStore, getActions and setStore functions available, because they were declared

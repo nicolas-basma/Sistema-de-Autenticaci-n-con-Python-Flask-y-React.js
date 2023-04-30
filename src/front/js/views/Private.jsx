@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import useStore from "../store/appContext.jsx";
+import "../../styles/private.css";
 
 const Private = () => {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ const Private = () => {
       <h6>{user.id}</h6>
       <Card>
         <Card.Img
-          variant="top"
+          className="private"
+          // variant="top"
           src="https://www.mos.org/sites/dev-elvis.mos.org/files/images/main/uploads/slides/ExUni-LP.jpg"
         />
         <Card.Body>
@@ -38,7 +40,8 @@ const Private = () => {
           </Card.Text>
         </Card.Body>
         <Card.Img
-          variant="bottom"
+          className="private"
+          // variant="bottom"
           src="https://images.newscientist.com/wp-content/uploads/2020/08/19163900/credit_irina-dmitrienko-_-alamy.jpg?crop=16:9,smart&width=1200&height=675&upscale=true"
         />
       </Card>
