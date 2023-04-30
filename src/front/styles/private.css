@@ -1,3 +1,13 @@
 .private {
   width: 500px;
+  background: none;
+  border: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: rgb(34, 53, 53);
+  flex-direction: column;
 }

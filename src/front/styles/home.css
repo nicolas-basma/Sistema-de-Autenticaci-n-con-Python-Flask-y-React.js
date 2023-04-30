@@ -9,7 +9,7 @@
 
 body {
   background-image: url("https://cdn.pixabay.com/photo/2022/09/28/02/48/matrix-7484072_1280.jpg");
-  background-size: contain;
+  background-size: auto;
   font-family: "Darumadrop One", cursive;
   font-size: 50px;
   min-height: 100vh;

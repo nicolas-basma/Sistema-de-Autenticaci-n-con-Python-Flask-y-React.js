@@ -16,14 +16,12 @@ const Private = () => {
 
   return (
     <>
-      <h1>{user.email}</h1>
-      <h6>{user.id}</h6>
-      <Card>
-        <Card.Img
-          className="private"
-          // variant="top"
-          src="https://www.mos.org/sites/dev-elvis.mos.org/files/images/main/uploads/slides/ExUni-LP.jpg"
-        />
+      <div className="user">
+        <h1>Welcome {user.email}!</h1>
+        <h4>ID user : {user.id}</h4>
+      </div>
+      <Card className="private">
+        <Card.Img src="https://www.mos.org/sites/dev-elvis.mos.org/files/images/main/uploads/slides/ExUni-LP.jpg" />
         <Card.Body>
           <Card.Text>
             Some quick example text to build on the card title and make up the
@@ -32,18 +30,14 @@ const Private = () => {
         </Card.Body>
       </Card>
       <br />
-      <Card>
+      <Card className="private">
         <Card.Body>
           <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
         </Card.Body>
-        <Card.Img
-          className="private"
-          // variant="bottom"
-          src="https://images.newscientist.com/wp-content/uploads/2020/08/19163900/credit_irina-dmitrienko-_-alamy.jpg?crop=16:9,smart&width=1200&height=675&upscale=true"
-        />
+        <Card.Img src="https://images.newscientist.com/wp-content/uploads/2020/08/19163900/credit_irina-dmitrienko-_-alamy.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" />
       </Card>
     </>
   );
