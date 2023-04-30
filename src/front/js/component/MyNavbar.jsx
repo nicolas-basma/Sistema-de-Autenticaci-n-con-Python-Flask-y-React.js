@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Nav } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import "../../styles/navbar.css";
+import useStore from "../store/appContext.jsx";
 
 const MyNavbar = () => {
+  const navigate = useNavigate();
+  const { store } = useStore();
+  const { user } = store;
   return (
-    <Navbar>
+    <Navbar bg="dark" variant="dark">
       <Container>
-        <Link to="/signup">
-          <span className="navbar-brand mb-0 h1">Create your acount</span>
-        </Link>
+        <Link to="/signup">Create your acount</Link>
         <Nav>
-          <Link to="/login">
-            <button className="btn btn-primary">Login</button>
-          </Link>
+          {Boolean(user) ? (
+            <button onClick={() => console.log("holis")}>LogOut</button>
+          ) : (
+            <button onClick={() => navigate("/login")}>Login</button>
+          )}
         </Nav>
       </Container>
     </Navbar>

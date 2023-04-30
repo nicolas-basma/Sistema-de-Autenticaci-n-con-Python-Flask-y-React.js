@@ -30,16 +30,17 @@ def create_user():
 
 @api.route('/login', methods=['POST'])
 def handle_login():
-
     user_login = request.json 
     user = User.query.filter_by(email=user_login["email"]).first()
+    if not user:
+        return jsonify({"msg": "Credential error"}), 401
     login = user.serialize()
     password = user_login["password"].encode('utf8')
     user_password = user.password_control(password)
     if not user_password:
         return jsonify({"msg": "Credential error"}), 401
     login_token = create_access_token(identity=login)
-    return jsonify({ "login_token": login_token, "user_id": login["id"] })
+    return jsonify({ "login_token": login_token}), 200
 
 @api.route('/private', methods=['GET'])
 @jwt_required()
@@ -60,7 +61,6 @@ def deleteuser(id):
 @api.route('/all-users', methods=['GET'])
 def all_users():
     all_users = User.query.all()
-    print(all_users)
     user_list = []
     for user in all_users:
         user_list.append(user.serialize())

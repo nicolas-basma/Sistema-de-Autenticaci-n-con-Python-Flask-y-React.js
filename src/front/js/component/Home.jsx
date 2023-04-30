@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import useStore from "../store/appContext.jsx";
 
 const Home = () => {
-  const store = useStore();
+  const { store, action } = useStore();
   const { listUser } = store;
-  console.log(listUser);
-
-  return <h1>{listUser}</h1>;
+  const { getUser } = action;
+  // useEffect(() => {
+  // }, []);
+  console.log(listUser.map((user) => console.log(user)));
+  useMemo(() => {
+    getUser();
+  }, []);
+  return (
+    <h1>
+      {listUser
+        ? listUser.map((user) => <p key={user.id}>{user.email}</p>)
+        : null}
+    </h1>
+  );
 };
 
 export default Home;

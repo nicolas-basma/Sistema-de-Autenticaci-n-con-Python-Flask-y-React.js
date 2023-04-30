@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
+import useStore from "../store/appContext.jsx";
 
 const Private = () => {
+  const navigate = useNavigate();
+  const { action, store } = useStore();
+  const { user } = store;
+  const { handlePrivateInfo } = action;
+
+  useEffect(() => {
+    handlePrivateInfo(navigate);
+  }, []);
+
   return (
     <>
+      <h1>{user.email}</h1>
+      <h6>{user.id}</h6>
       <Card>
         <Card.Img
           variant="top"
